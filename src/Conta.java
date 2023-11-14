@@ -1,27 +1,46 @@
 abstract class Conta extends Banco{
-    private String saldo;
+    private double saldo;
 
-    void deposito(int valor){};
-    void saque(){};
-    void transferencia(double valor){
+    void deposito(double valor){
+        double novoSaldo = getSaldo() + valor;
+        setSaldo(novoSaldo);
 
-        if(!getSaldo().isEmpty()){
-            double
+        System.out.println("Você depositou R$"+valor+" e seu saldo agora é de R$"+getSaldo());
+    };
+
+    void saque(double valor){
+
+        if (!((getSaldo() < 0) && (getSaldo() < valor))){
+            double novoSaldo = getSaldo() - valor;
+            setSaldo(novoSaldo);
         }
         else{
             System.out.println("Saldo insuficiente!");
         }
+        System.out.println("Você sacou R$"+valor+" e ficou com R$"+getSaldo()+" de saldo");
+    };
+
+    void transferencia(double valor) {
+
+        if (!((getSaldo() < 0) && (getSaldo() < valor))) {
+            double novoSaldo = getSaldo() + valor;
+            setSaldo(novoSaldo);
+        } else {
+            System.out.println("Saldo insuficiente!");
+        }
+
+        System.out.println("Seu novo saldo é "+getSaldo());
     };
 
     public Conta(String agencia, int numConta) {
         super(agencia, numConta);
     }
 
-    public String getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(String saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 }
