@@ -1,3 +1,5 @@
+package banco;
+
 public class Banco {
     public Banco(String agencia, int numConta) {
         this.agencia = agencia;

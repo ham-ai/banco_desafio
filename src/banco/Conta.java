@@ -1,14 +1,16 @@
-abstract class Conta extends Banco{
+package banco;
+
+public abstract class Conta extends Banco{
     private double saldo;
 
-    void deposito(double valor){
+    public void deposito(double valor){
         double novoSaldo = getSaldo() + valor;
         setSaldo(novoSaldo);
 
         System.out.println("Você depositou R$"+valor+" e seu saldo agora é de R$"+getSaldo());
     };
 
-    void saque(double valor){
+    public void saque(double valor){
 
         if (!((getSaldo() < 0) && (getSaldo() < valor))){
             double novoSaldo = getSaldo() - valor;
@@ -20,7 +22,7 @@ abstract class Conta extends Banco{
         System.out.println("Você sacou R$"+valor+" e ficou com R$"+getSaldo()+" de saldo");
     };
 
-    void transferencia(double valor) {
+    public void transferencia(double valor) {
 
         if (!((getSaldo() < 0) && (getSaldo() < valor))) {
             double novoSaldo = getSaldo() + valor;
