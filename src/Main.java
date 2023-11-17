@@ -32,18 +32,24 @@ public class Main {
         System.out.println("Insira sua o número da sua conta:");
         int numConta = entrada.nextInt();
 
-        System.out.println("Insira o valor que deseja depositar:");
+       System.out.println("Insira o valor que deseja depositar:");
         double valorDepos = entrada.nextDouble();
 
-        System.out.println("Insira o valor que deseja transferir:");
-        double valorTransf = entrada.nextDouble();
+        System.out.println("Insira o valor que deseja sacar:");
+        double valorSaque = entrada.nextDouble();
+
+        /*System.out.println("Insira o valor que deseja transferir:");
+        double valorTransf = entrada.nextDouble();*/
 
         ContaCorrente cc = new ContaCorrente(agencia, numConta);
 
         cc.deposito(valorDepos);
 
-        cc.transferencia(valorTransf);
-    // problema no if else, está permitindo sacar valor maior do que o saldo na conta
+        //cc.transferencia(valorTransf);
+
+        cc.saque(valorSaque);
+
+
 
 
 
