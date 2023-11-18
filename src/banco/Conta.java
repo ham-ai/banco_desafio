@@ -6,6 +6,7 @@ public abstract class Conta extends Banco{
     public Conta(String agencia, int numConta) {
         super(agencia, numConta);
     }
+
     public void deposito(double valorDepos){
         double novoSaldo = getSaldo() + valorDepos;
         setSaldo(novoSaldo);
@@ -20,7 +21,7 @@ public abstract class Conta extends Banco{
             double novoSaldo = getSaldo() - valor;
             setSaldo(novoSaldo);
 
-            System.out.println("\nVocê sacou R$"+valor+" e ficou com R$"+ getSaldo() +"reais de saldo");
+            System.out.println("\nVocê sacou R$"+valor+" e ficou com R$"+ getSaldo() +" reais de saldo");
         }
         else{
             System.out.println("\nTentativa de saque, saldo insuficiente!");
@@ -30,16 +31,16 @@ public abstract class Conta extends Banco{
 
     public void transferencia(double valor) {
 
-        if ((getSaldo() < 0) || (getSaldo() < valor)) {
-            System.out.println("\nSeu saldo é insuficiente para realizar essa transferência!");
-            System.out.println("\nSeu saldo: R$"+getSaldo()+"\nValor da transferência: R$"+valor);
-        }
-        else {
+        if (!((getSaldo() < 0) || (getSaldo() < valor))) {
             double novoSaldo = getSaldo() - valor;
             setSaldo(novoSaldo);
 
             System.out.println("\nVocê transferiu R$"+valor+" reais");
             System.out.println("Seu novo saldo é de R$"+ getSaldo() +" reais");
+        }
+        else {
+            System.out.println("\nSeu saldo é insuficiente para realizar essa transferência!");
+            System.out.println("\nSeu saldo: R$"+getSaldo()+"\nValor da transferência: R$"+valor);
         }
 
     };

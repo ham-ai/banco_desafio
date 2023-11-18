@@ -9,6 +9,47 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
 
+        short operacao = 1;
+
+        //receber informacoes do usuario/banco/tipo de conta cc ou poupanca
+
+        do{
+            System.out.println("\nPara depositar digite 2;");
+            System.out.println("\nPara sacar digite 3;");
+            System.out.println("\nPara transferir digite 4");
+            //System.out.println("Para verificar seu saldo digite 5");
+            short opcao = entrada.nextShort();
+
+            switch (opcao) {
+                case 2 -> {
+                    System.out.println("\nInsira o valor que deseja depositar:");
+                    double valorDepos = entrada.nextDouble();
+                }
+                case 3 -> {
+                    System.out.println("\nInsira o valor que deseja sacar:");
+                    double valorSaque = entrada.nextDouble();
+                }
+                //chamar metodo
+                case 4 -> {
+                    System.out.println("\nInsira o valor que deseja transferir:");
+                    double valorTransf = entrada.nextDouble();
+                }
+                default -> {
+                    System.out.println("\nVocê não digitou o número correto.\nTente novamente.");
+                }
+            }
+
+            System.out.println("\nPara continuar digite '1', para sair digite '0'");
+            operacao = entrada.nextShort();
+
+        } while(operacao > 0);
+
+        System.out.println("Volte sempre!");
+
+
+
+
+
         /*System.out.println("Insira seu nome:");
         String nome = entrada.nextLine();
 
@@ -26,28 +67,19 @@ public class Main {
         funcionando aqui
         */
 
-        System.out.println("Insira sua agência:");
+        /*System.out.println("Insira sua agência:");
         String agencia = entrada.nextLine();
 
         System.out.println("Insira sua o número da sua conta:");
         int numConta = entrada.nextInt();
 
-       System.out.println("Insira o valor que deseja depositar:");
-        double valorDepos = entrada.nextDouble();
-
         System.out.println("Insira o valor que deseja sacar:");
         double valorSaque = entrada.nextDouble();
 
-        /*System.out.println("Insira o valor que deseja transferir:");
-        double valorTransf = entrada.nextDouble();*/
+        ContaCorrente cc = new ContaCorrente(agencia, numConta);*/
 
-        ContaCorrente cc = new ContaCorrente(agencia, numConta);
 
-        cc.deposito(valorDepos);
-
-        //cc.transferencia(valorTransf);
-
-        cc.saque(valorSaque);
+        //limpar metodo main, otimizar ele
 
 
 
