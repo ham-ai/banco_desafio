@@ -1,6 +1,7 @@
 import banco.Cliente;
 import banco.Conta;
 import banco.ContaCorrente;
+import banco.ContaPoupanca;
 
 import java.util.Scanner;
 
@@ -9,47 +10,30 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
 
-        short operacao = 1;
-
         //receber informacoes do usuario/banco/tipo de conta cc ou poupanca
 
-        do{
-            System.out.println("\nPara depositar digite 2;");
-            System.out.println("\nPara sacar digite 3;");
-            System.out.println("\nPara transferir digite 4");
-            //System.out.println("Para verificar seu saldo digite 5");
-            short opcao = entrada.nextShort();
+        System.out.println("\nInsira sua agência:");
+        String agencia = entrada.nextLine();
 
-            switch (opcao) {
-                case 2 -> {
-                    System.out.println("\nInsira o valor que deseja depositar:");
-                    double valorDepos = entrada.nextDouble();
-                }
-                case 3 -> {
-                    System.out.println("\nInsira o valor que deseja sacar:");
-                    double valorSaque = entrada.nextDouble();
-                }
-                //chamar metodo
-                case 4 -> {
-                    System.out.println("\nInsira o valor que deseja transferir:");
-                    double valorTransf = entrada.nextDouble();
-                }
-                default -> {
-                    System.out.println("\nVocê não digitou o número correto.\nTente novamente.");
-                }
-            }
+        System.out.println("\nInsira sua o número da sua conta:");
+        int numConta = entrada.nextInt();
 
-            System.out.println("\nPara continuar digite '1', para sair digite '0'");
-            operacao = entrada.nextShort();
+        System.out.println("Para acessar sua conta corrente digite '1'." +
+        "\nPara acessar sua conta poupança digite '2'.");
 
-        } while(operacao > 0);
+        short contaTipo = entrada.nextShort();
 
-        System.out.println("Volte sempre!");
+        if (contaTipo == 1){
+            ContaCorrente contaCorrente = new ContaCorrente(agencia, numConta);
+            contaCorrente.operacoesContaCorrente();
 
+        } else if (contaTipo == 2) {
+            ContaPoupanca contaPoupanca = new ContaPoupanca(agencia, numConta);
+            contaPoupanca.operacoesContaPoupanca();
+        }
+        else System.out.println("Insira um número válido!");
 
-
-
-
+        // tratar o cliente depois
         /*System.out.println("Insira seu nome:");
         String nome = entrada.nextLine();
 
@@ -66,24 +50,6 @@ public class Main {
 
         funcionando aqui
         */
-
-        /*System.out.println("Insira sua agência:");
-        String agencia = entrada.nextLine();
-
-        System.out.println("Insira sua o número da sua conta:");
-        int numConta = entrada.nextInt();
-
-        System.out.println("Insira o valor que deseja sacar:");
-        double valorSaque = entrada.nextDouble();
-
-        ContaCorrente cc = new ContaCorrente(agencia, numConta);*/
-
-
-        //limpar metodo main, otimizar ele
-
-
-
-
 
 
     }

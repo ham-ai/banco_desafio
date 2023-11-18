@@ -52,11 +52,4 @@ public abstract class Conta extends Banco{
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-
-    /* dar uma olhada nos métodos novamente, logica OU || funcionando
-       deposito funcionando, implementar mesma logica nos metodos necessarios
-    */
-
-
-
 }
