@@ -8,19 +8,49 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner entrada = new Scanner(System.in);
-
         ListaClientes listaClientes = new ListaClientes();
 
-        listaClientes.adicionarClientes("Abraham", 21, "(16)991802986", "505");
+        Scanner entrada = new Scanner(System.in);
 
-        System.out.println(listaClientes.pesquisaCpf("505"));
+        // cadastro de usuario
+            short sair = 1;
+
+            do{
+
+                System.out.println("\nInsira seu nome:");
+                String nome = entrada.next();
+
+                System.out.println("\nInsira sua idade:");
+                int idade = entrada.nextInt();
+
+                System.out.println("\nInsira seu telefone:");
+                String telefone = entrada.next();
+
+                System.out.println("\nInsira seu CPF:");
+                String cpf = entrada.next();
+
+                System.out.println("\nSeu nome é " +nome+ ", sua idade é " +idade+
+                ", seu telefone é "+ telefone +", e seu CPF é " + cpf);
+
+                System.out.println("\nAs informações acima estão corretas? Se sim digite '0', se não digite '1'");
+                sair = entrada.nextShort();
 
 
+                if (sair == 0){
+                    listaClientes.adicionarClientes(nome, idade, telefone, cpf); //lista funcionando
 
-        //receber informacoes do usuario/banco/tipo de conta cc ou poupanca
+                    System.out.println("Usuário cadastrado com sucesso!");
+                    System.out.println(listaClientes.pesquisaCpf(cpf));
+                }
 
-       /* System.out.println("\nInsira sua agência:");
+            }
+            while(sair > 0);
+
+
+        //entrada de dados conta/agencia
+       /* System.out.println("\nAgora vamos acessar sua conta!");
+
+        System.out.println("\nInsira sua agência:");
         String agencia = entrada.nextLine();
 
         System.out.println("\nInsira sua o número da sua conta:");
@@ -40,28 +70,10 @@ public class Main {
             contaPoupanca.operacoesContaPoupanca();
         }
         else System.out.println("Insira um número válido!");
+*/
 
-        // tratar o cliente depois
 
-        /*System.out.println("Insira seu nome:");
-        String nome = entrada.nextLine();
 
-        System.out.println("Insira sua idade:");
-        int idade = entrada.nextInt();
-
-        System.out.println("Insira seu telefone:");
-        String telefone = entrada.nextInt();
-
-        System.out.println("Insira seu cpf:");
-        String cpf = entrada.nextLine();
-
-        Cliente cliente = new Cliente(nome,idade,telefone, cpf);
-
-        System.out.println("Seu nome é "+cliente.nome+", sua idade é "+cliente.idade+", e seu telefone é "+ cliente.getTelefone());
-        definir telefone como String ou double depois, por causa do tamanho de caracteres
-
-        funcionando aqui
-        */
 
 
     }

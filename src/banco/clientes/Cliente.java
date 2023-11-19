@@ -1,5 +1,7 @@
 package banco.clientes;
 
+import java.util.Scanner;
+
 public class Cliente {
     public String nome;
     public int idade;
@@ -26,12 +28,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "nome='" + nome + '\'' +
-                ", idade=" + idade +
-                ", telefone='" + telefone + '\'' +
-                ", cpf='" + cpf + '\'' +
-                '}';
+        return "Cliente: '"+nome+"', idade: '"+idade+"', telefone: '"+telefone+"', cpf: '"+cpf+"'";
     }
 
 }
