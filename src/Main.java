@@ -1,3 +1,5 @@
+import banco.clientes.Cliente;
+import banco.clientes.ListaClientes;
 import banco.contas.ContaCorrente;
 import banco.contas.ContaPoupanca;
 
@@ -8,9 +10,17 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
 
+        ListaClientes listaClientes = new ListaClientes();
+
+        listaClientes.adicionarClientes("Abraham", 21, "(16)991802986", "505");
+
+        System.out.println(listaClientes.pesquisaCpf("505"));
+
+
+
         //receber informacoes do usuario/banco/tipo de conta cc ou poupanca
 
-        System.out.println("\nInsira sua agência:");
+       /* System.out.println("\nInsira sua agência:");
         String agencia = entrada.nextLine();
 
         System.out.println("\nInsira sua o número da sua conta:");
