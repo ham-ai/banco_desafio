@@ -48,16 +48,17 @@ public class Main {
 
 
         //entrada de dados conta/agencia
-       /* System.out.println("\nAgora vamos acessar sua conta!");
+        System.out.println("\nAgora vamos acessar sua conta!");
 
         System.out.println("\nInsira sua agência:");
-        String agencia = entrada.nextLine();
+        String agencia = entrada.next();
 
         System.out.println("\nInsira sua o número da sua conta:");
         int numConta = entrada.nextInt();
 
-        System.out.println("Para acessar sua conta corrente digite '1'." +
-        "\nPara acessar sua conta poupança digite '2'.");
+        System.out.println("""
+                Para acessar sua conta corrente digite '1'.
+                Para acessar sua conta poupança digite '2'.""");
 
         short contaTipo = entrada.nextShort();
 
@@ -70,7 +71,7 @@ public class Main {
             contaPoupanca.operacoesContaPoupanca();
         }
         else System.out.println("Insira um número válido!");
-*/
+
 
 
 

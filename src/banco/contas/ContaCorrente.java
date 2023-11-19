@@ -30,7 +30,7 @@ public class ContaCorrente extends Conta {
             System.out.println("\nPara depositar digite 2;");
             System.out.println("\nPara sacar digite 3;");
             System.out.println("\nPara transferir digite 4");
-            System.out.println("Para verificar seu saldo digite 5");
+            System.out.println("\nPara verificar seu saldo digite 5");
 
             short opcao = entrada.nextShort();
 
@@ -51,7 +51,7 @@ public class ContaCorrente extends Conta {
                     transferencia(valorTransf);
                 }
                 case 5 ->{
-                    System.out.println("Seu saldo atual é R$"+getSaldo()+" reais");
+                    System.out.println("\nSeu saldo atual é R$"+getSaldo()+" reais");
                 }
                 default -> {
                     System.out.println("\nVocê não digitou o número correto.\nTente novamente.");
@@ -63,7 +63,7 @@ public class ContaCorrente extends Conta {
 
         } while(operacao > 0);
 
-        System.out.println("\nVolte sempre!\nAgradecemos por utilizar nossos serviços ^^");
+        System.out.println("\nVolte sempre!\nAgradecemos por utilizar nossos serviços");
     }
 
 }
