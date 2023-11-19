@@ -1,7 +1,5 @@
-import banco.Cliente;
-import banco.Conta;
-import banco.ContaCorrente;
-import banco.ContaPoupanca;
+import banco.contas.ContaCorrente;
+import banco.contas.ContaPoupanca;
 
 import java.util.Scanner;
 
@@ -34,6 +32,7 @@ public class Main {
         else System.out.println("Insira um número válido!");
 
         // tratar o cliente depois
+
         /*System.out.println("Insira seu nome:");
         String nome = entrada.nextLine();
 
@@ -41,9 +40,12 @@ public class Main {
         int idade = entrada.nextInt();
 
         System.out.println("Insira seu telefone:");
-        int telefone = entrada.nextInt();
+        String telefone = entrada.nextInt();
 
-        Cliente cliente = new Cliente(nome,idade,telefone);
+        System.out.println("Insira seu cpf:");
+        String cpf = entrada.nextLine();
+
+        Cliente cliente = new Cliente(nome,idade,telefone, cpf);
 
         System.out.println("Seu nome é "+cliente.nome+", sua idade é "+cliente.idade+", e seu telefone é "+ cliente.getTelefone());
         definir telefone como String ou double depois, por causa do tamanho de caracteres

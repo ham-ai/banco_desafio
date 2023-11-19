@@ -1,6 +1,8 @@
-package banco;
+package banco.contas;
 
-public abstract class Conta extends Banco{
+import banco.Banco;
+
+public abstract class Conta extends Banco {
     private double saldo;
 
     public Conta(String agencia, int numConta) {
@@ -12,7 +14,7 @@ public abstract class Conta extends Banco{
         setSaldo(novoSaldo);
 
         System.out.println("\nVocê depositou R$"+valorDepos+" reais,\n" +
-        "agora seu saldo é de R$"+ getSaldo() +" reais");
+                "agora seu saldo é de R$"+ getSaldo() +" reais");
     };
 
     public void saque(double valor){
